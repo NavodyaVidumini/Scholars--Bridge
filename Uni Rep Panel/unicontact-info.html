@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+
+        .sidebar {
+            background-color: #002D62; /* Dark blue sidebar */
+            color: white;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .sidebar a:hover {
+            background-color: #001F3F; /* Slightly darker blue on hover */
+        }
+
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            color: #002D62; /* Dark blue heading */
+            border-bottom: 2px solid #002D62;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #002D62; /* Dark blue sub-heading */
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #002D62; /* Dark blue label text */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #002D62; /* Dark blue button background */
+            color: white; /* White button text */
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #001F3F; /* Darker blue on hover */
+        }
+
+        .contact-admin-button {
+            display: block;
+            margin: 20px auto;
+            background-color: #FF5733; /* Bright color for emphasis */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .contact-admin-button:hover {
+            background-color: red; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>University Panel</h2>
+        <a href="university-representative-panel.html">Dashboard</a>
+        <a href="course-management.html">Course Management</a>
+        <a href="contact-info.html">Contact Info</a>
+        <a href="advertisements.html">Advertisements</a>
+        <a href="view-students.html">View Students</a>
+        <a href="logout.html">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Contact Information</h1>
+        </div>
+        <h2>Manage Contact Information</h2>
+        <form id="contact-info-form">
+            <label for="university-name">University Name:</label>
+            <input type="text" id="university-name" name="university-name" required>
+            <label for="contact-email">Contact Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+            <label for="contact-phone">Contact Phone:</label>
+            <input type="tel" id="contact-phone" name="contact-phone" required>
+            <button type="submit">Save Changes</button>
+        </form>
+        <a href="mailto:admin@example.com" class="contact-admin-button">Contact Admin</a>
+    </div>
+    <script>
+        // JavaScript for handling form submission and saving contact info
+        document.getElementById('contact-info-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Save contact information (this should be replaced with server-side logic)
+            alert('Contact information saved!');
+        });
+    </script>
+</body>
+</html>

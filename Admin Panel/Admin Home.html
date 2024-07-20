@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #0074D9;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #ffffff;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #0074D9;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="user-management.html">User Management</a>
+        <a href="course-management.html">Course Management</a>
+        <a href="settings.html">Settings</a>
+        <a href="logout.html">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome, Admin</h1>
+        </div>
+        <p>Select an option from the sidebar to manage users, courses, or settings.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Degrees</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background-color: #002D62;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #002D62;
+        }
+        .search-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .search-panel label {
+            font-weight: bold;
+            color: #002D62;
+        }
+        .search-panel select,
+        .search-panel input,
+        .search-panel button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .search-panel select:focus,
+        .search-panel input:focus,
+        .search-panel button:focus {
+            border-color: #002D62;
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            background-color: #002D62;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #001a3d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #002D62;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>External Degrees</h1>
+    </div>
+    <div class="main-content">
+        <h2>Search for External Degrees</h2>
+        <div class="search-panel">
+            <label for="degree-type">Degree Type:</label>
+            <select id="degree-type">
+                <option value="">Select Degree Type</option>
+                <option value="degree1">Degree 1</option>
+                <option value="degree2">Degree 2</option>
+                <option value="degree3">Degree 3</option>
+            </select>
+
+            <label for="institution">Institution / University:</label>
+            <input type="text" id="institution" placeholder="Enter Institution Name">
+
+            <label for="field-of-study">Field of Study:</label>
+            <input type="text" id="field-of-study" placeholder="Enter Field of Study">
+
+            <button onclick="searchDegrees()">Search</button>
+        </div>
+
+        <h2>Available External Degrees</h2>
+        <table id="degrees-table">
+            <thead>
+                <tr>
+                    <th>Degree Type</th>
+                    <th>Institution/University</th>
+                    <th>Field of Study</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Degree rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function searchDegrees() {
+            // Sample function to handle search. Replace with actual logic.
+            const degreeType = document.getElementById('degree-type').value;
+            const institution = document.getElementById('institution').value;
+            const fieldOfStudy = document.getElementById('field-of-study').value;
+
+            // Mock data
+            const degrees = [
+                { degreeType: 'Degree 1', institution: 'Institution A', fieldOfStudy: 'Field A' },
+                { degreeType: 'Degree 2', institution: 'Institution B', fieldOfStudy: 'Field B' },
+                { degreeType: 'Degree 3', institution: 'Institution C', fieldOfStudy: 'Field C' }
+            ];
+
+            const filteredDegrees = degrees.filter(degree => {
+                return (!degreeType || degree.degreeType === degreeType) &&
+                       (!institution || degree.institution.includes(institution)) &&
+                       (!fieldOfStudy || degree.fieldOfStudy.includes(fieldOfStudy));
+            });
+
+            displayDegrees(filteredDegrees);
+        }
+
+        function displayDegrees(degrees) {
+            const tableBody = document.getElementById('degrees-table').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+
+            if (degrees.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="3">No results found.</td></tr>';
+                return;
+            }
+
+            degrees.forEach(degree => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = degree.degreeType;
+                row.insertCell(1).textContent = degree.institution;
+                row.insertCell(2).textContent = degree.fieldOfStudy;
+            });
+        }
+    </script>
+</body>
+</html>

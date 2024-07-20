@@ -1,0 +1,132 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+	
+	
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0074D9;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #0074D9;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0074D9;
+            outline: none;
+        }
+
+        .form-group button {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #0074D9;
+            font-size: 18px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <form id="settings-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" value="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="nic">NIC:</label>
+                <input type="text" id="nic" value="123456789V">
+            </div>
+            <div class="form-group">
+                <label for="stream">Stream:</label>
+                <select id="stream">
+                    <option value="Biological Science" selected>Biological Science</option>
+                    <option value="Physical Science">Physical Science</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Technology">Technology</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" value="2000-01-01">
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+        <div class="back-link">
+    <a href="View Profile.html">Back to Profile</a>
+
+    </div>
+    <script>
+        document.getElementById('settings-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add logic to handle form submission, e.g., sending data to the server
+            alert('Changes saved successfully!');
+        });
+    </script>
+</body>
+</html>

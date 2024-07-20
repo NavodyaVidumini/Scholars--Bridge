@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Search Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Center the container with margin */
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0074D9; /* Dark blue heading */
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Larger font size for headings */
+        }
+
+        .search-panel {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .search-panel label {
+            font-weight: bold;
+            color: #0074D9; /* Dark blue label text */
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .search-panel select,
+        .search-panel input,
+        .search-panel button {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light gray background */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .search-panel select:focus,
+        .search-panel input:focus,
+        .search-panel button:focus {
+            border-color: #0074D9; /* Dark blue border on focus */
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #0074D9; /* Dark blue button background */
+            color: white; /* White button text */
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .search-panel {
+                grid-template-columns: 1fr; /* Single column layout on smaller screens */
+            }
+
+            h1 {
+                font-size: 2em; /* Adjusted font size for smaller screens */
+            }
+
+            button {
+                padding: 10px 16px; /* Smaller button padding on smaller screens */
+                font-size: 14px; /* Smaller font size for buttons on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Panel</h1>
+        <div class="search-panel">
+            <label for="district">District:</label>
+            <select id="district">
+                <option value="">Select District</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Colombo">Colombo</option>
+                <option value="Kalutara">Kalutara</option>
+                <option value="Kurunagala">Kurunagala</option>
+                <option value="Ampara">Ampara</option>
+                <option value="Anuradhapuraya">Anuradhapuraya</option>
+                <option value="Badulla">Badulla</option>
+                <option value="Baticalloa">Baticalloa</option>
+                <option value="Galle">Galle</option>
+                <option value="Hambantota">Hambantota</option>
+                <option value="Jaffna">Jaffna</option>
+                <option value="Trincomale">Trincomale</option>
+                <option value="Matale">Matale</option>
+                <option value="Matara">Matara</option>
+                <option value="Mullativ">Mullativ</option>
+                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                <option value="Polonnaruwa">Polonnaruwa</option>
+                <option value="Vavuniya">Vavuniya</option>
+            </select>
+
+            <label for="subject1">Subject 1:</label>
+            <select id="subject1">
+                <option value="">Select Subject</option>
+                <option value="math">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="english">English</option>
+            </select>
+
+            <label for="subject2">Subject 2:</label>
+            <select id="subject2">
+                <option value="">Select Subject</option>
+                <option value="math">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="english">English</option>
+            </select>
+
+            <label for="subject3">Subject 3:</label>
+            <select id="subject3">
+                <option value="">Select Subject</option>
+                <option value="math">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="english">English</option>
+            </select>
+
+            <label for="zscore">Z-Score:</label>
+            <input type="number" id="zscore" placeholder="Enter Z-Score">
+
+            <button onclick="search()">Search</button>
+        </div>
+    </div>
+    <script>
+        function search() {
+            // Your search logic goes here
+            alert("Search button clicked!");
+        }
+    </script>
+</body>
+</html>
