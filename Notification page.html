@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #002D62;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tabs {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background-color: #002D62;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            transition: background-color 0.3s;
+        }
+        .tabs button.active {
+            background-color: #004080;
+        }
+        .tabs button:hover {
+            background-color: #004080;
+        }
+        .tab-content {
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .tab-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tab-content th, .tab-content td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-content th {
+            background-color: #002D62;
+            color: white;
+        }
+        .actions {
+            margin-bottom: 20px;
+        }
+        .actions button {
+            background-color: #002D62;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+            transition: background-color 0.3s;
+        }
+        .actions button:hover {
+            background-color: #004080;
+        }
+        .actions button.disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .actions input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Student Notifications</h1>
+    </div>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('university')">University Notifications</button>
+            <button class="tab-button" onclick="showTab('system')">System Notifications</button>
+        </div>
+        <div id="university" class="tab-content">
+            <div class="actions">
+                <button onclick="refreshNotifications('university')">Refresh</button>
+                <button onclick="markAllRead('university')">Mark All as Read</button>
+                <button onclick="deleteAll('university')">Delete All</button>
+                <label>
+                    <input type="checkbox" id="select-all-university" onclick="toggleSelectAll('university')">
+                    Select All
+                </label>
+            </div>
+            <table id="university-notifications">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Notification</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example rows -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>LNBTI Japanese IT university will have an open day.</td>
+                        <td>2024-07-20</td>
+                    </tr>
+                    <!-- More rows -->
+                </tbody>
+            </table>
+        </div>
+        <div id="system" class="tab-content" style="display: none;">
+            <div class="actions">
+                <button onclick="refreshNotifications('system')">Refresh</button>
+                <button onclick="markAllRead('system')">Mark All as Read</button>
+                <button onclick="deleteAll('system')">Delete All</button>
+                <label>
+                    <input type="checkbox" id="select-all-system" onclick="toggleSelectAll('system')">
+                    Select All
+                </label>
+            </div>
+            <table id="system-notifications">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Notification</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example rows -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Your password has been changed.</td>
+                        <td>2024-07-20</td>
+                    </tr>
+                    <!-- More rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function showTab(type) {
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.querySelector(`.tab-button[onclick="showTab('${type}')"]`).classList.add('active');
+            document.getElementById(type).style.display = 'block';
+        }
+
+        function toggleSelectAll(type) {
+            const isChecked = document.getElementById(`select-all-${type}`).checked;
+            const checkboxes = document.querySelectorAll(`#${type}-notifications input[type="checkbox"]`);
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        }
+
+        function refreshNotifications(type) {
+            alert(`Refreshing ${type} notifications.`);
+            // Implement your refresh logic here
+        }
+
+        function markAllRead(type) {
+            alert(`Marking all ${type} notifications as read.`);
+            // Implement your mark as read logic here
+        }
+
+        function deleteAll(type) {
+            alert(`Deleting all ${type} notifications.`);
+            // Implement your delete logic here
+        }
+    </script>
+</body>
+</html>
