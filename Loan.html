@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Loans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #002D62;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #004080;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .header {
+            background-color: #002D62;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #002D62;
+            color: white;
+        }
+
+        button {
+            background-color: #002D62;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        .apply-btn {
+            background-color: #28a745;
+        }
+
+        .apply-btn:hover {
+            background-color: #218838;
+        }
+
+        .info-btn {
+            background-color: #007bff;
+        }
+
+        .info-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Student Panel</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="course-management.html">Course Management</a>
+        <a href="contact-info.html">Contact Info</a>
+        <a href="advertisements.html">Advertisements</a>
+        <a href="view-students.html">View Students</a>
+        <a href="student-loans.html">Student Loans</a>
+        <a href="logout.html">Logout</a>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Available Student Loans</h1>
+        </div>
+        <button class="info-btn" onclick="showLoanInfo()">View Loan Details</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Loan Provider</th>
+                    <th>Loan Name</th>
+                    <th>Interest Rate</th>
+                    <th>Loan Amount</th>
+                    <th>Apply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>National Bank</td>
+                    <td>Education Loan A</td>
+                    <td>4.5%</td>
+                    <td>Rs 10,000</td>
+                    <td><button class="apply-btn">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Student Finance</td>
+                    <td>Future Fund Loan</td>
+                    <td>3.8%</td>
+                    <td>Rs 15,000</td>
+                    <td><button class="apply-btn">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Global Lending</td>
+                    <td>Higher Education Loan</td>
+                    <td>5.0%</td>
+                    <td>Rs 20,000</td>
+                    <td><button class="apply-btn">Apply</button></td>
+                </tr>
+                <!-- Add more -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function showLoanInfo() {
+            alert('More details about the loan');
+        }
+    </script>
+</body>
+</html>
